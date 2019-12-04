@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>表单元素</title>
+</head>
+
+<body>
+  <!--表示元素简单的理解就是可以输入数据的-->
+  <!--文本输入框 input type是输入框的意思，text就是默认输入框-->
+  姓名:<input type="text" placeholder="请输入用户名">
+  <!--输入密码框-->
+  密码:<input type="password" paceholder="请输入密码">
+  <!--数字输入框 type为number-->
+  <input type="number" plceholder="数值">
+  <!--日期输入框-->
+  <input type="date" placeholder="日期">
+  <hr>
+  <!--label，是点击label中的任何区域，焦点都会切换到label区域-->
+  <label>
+    点击标签文字<input type="text">后面点击也一样
+  </label>
+
+  <!--
+  纸境奇缘epistory
+  传送门2
+  单选按钮radio，单选按钮要name值相同的才是一组（同名的相互排斥-互斥）
+  checked属性出现就表示状态为选中
+  -->
+  <label>
+    <input type="radio" name="sex">男
+  </label>
+  <label>
+    <input type="radio" bane="sex">女
+  </label>
+  <label>
+    <input type="radio" name="sex">保密
+  </label>
+  <!--复选按钮 checkbox checked属性出现就是选中-->
+  </label>
+  <label>
+    <input type="checkbox">游戏
+  </label>
+  </label>
+  <label>
+    <input type="checkbox">音乐
+  </label>
+  </label>
+  <label>
+    <input type="checkbox">电影
+  </label>
+  <label>
+    <input type="checkbox">学习
+  </label>
+  <!--列表，符合标记，select，option是子标记，表示列表
+    option的selected属性表示该选项是选中的状态-->
+  <br>
+  <select>
+    <option>请选你的最高学府</option>
+    <option>初中</option>
+    <option>高中</option>
+    <option>大专</option>
+    <option>本科</option>
+  </select>
+  <!--列表形态和多选 size大于1变成列表了，表示高度变成显示多个，muliple表示可以多选，ctrl是不是连续选择
+    d点击一个shift后是连续选择-->
+  <option size="5" multiple>
+  <option>人员选择</option>
+  <option>16</option>
+  <option>15</option>
+  <option>14</option>
+  <option>13</option>
+  <option>12</option>
+  </option>
+  <select id="year"></select>
+  <select id="month"></select>
+  <select id="day"></select>
+  <script>
+    //年份
+    let year = document.getElementById('year')
+    let now = new Date();
+    for (let i = 1960; i <= now.getUTCFullYear(); i++) {
+      let op = document.createElement('option');
+      op.append(i + '年');
+      year.append(op);
+    }
+    year.selectedlndex = year.options.length / 2;
+    //月份
+    let month = documen.getElementById('month')
+    for (let i = 1; i <= 12; i++) {
+      let op = document.createElement('option');
+      op.append(i + '月');
+      month.append(op);
+    }
+    //日期
+    let day = document.getElementById('day')
+    for (let i = 1; i <= 31; i++) {
+      let op = document.createElement('option');
+      op.append(i + '日');
+      day.append(op);
+    }
+  </script>
+</body>
+
+</html>
